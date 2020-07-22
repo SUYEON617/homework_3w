@@ -1,0 +1,19 @@
+#! /usr/bin/python3m
+
+import sys
+import json
+
+def read_csv(file_name):
+    with open(file_name,'r') as k:
+        ret=[]
+        for line in k:
+            if line.isdigit():
+                su=line.strip().split(',')
+                continue
+            sample=line.strip().split(',')
+            d=dict(zip(sample,su))
+            ret.append(d)
+    return ret
+
+print(read_csv("example.csv"))
+            
